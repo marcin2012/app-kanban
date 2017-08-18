@@ -1,9 +1,12 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  entry: './src/app/app.js',
+  entry: {
+    app: './src/app/app.js'
+  },
   output: {
-    path: __dirname + "/dist", // output directory
-    filename: "bundle.js" // name of the generated bundle
+    path: '/build',
+    filename: 'bundle.js'
   },
 
   plugins: [
@@ -22,6 +25,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.html$/, exclude: /node_modules/,
+        use: ['html-loader']
       }
     ]
   },

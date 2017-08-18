@@ -1,10 +1,13 @@
 require('./styles.scss');
-require('angular');
 require('angular-material');
 require('angular-material/angular-material.css');
+require('angular-ui-router');
+require('angular');
 
-var app = angular.module("myApp", ['ngMaterial']);
+var dependencies = ['ngMaterial', 'ui.router'];
+var moduleName = 'myApp';
+var ngModule = angular.module(moduleName, dependencies);
 
-app.controller("myCtrl", function($scope) {
-$scope.name = 'Hello World!!!'
-});
+require('./config')(ngModule);
+require('./component1/View1.component')(ngModule);
+require('./component2/View2.component')(ngModule);
