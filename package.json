@@ -1,19 +1,7 @@
 {
-  "name": "MyApp",
+  "name": "AppKanban",
   "version": "1.0.0",
   "license": "MIT",
-  "devDependencies": {
-    "css-loader": "0.28.4",
-    "extract-text-webpack-plugin": "3.0.0",
-    "html-webpack-plugin": "2.30.1",
-    "node-sass": "4.5.3",
-    "postcss-loader": "2.0.6",
-    "sass-loader": "4.0.2",
-    "style-loader": "0.18.2",
-    "webpack": "3.4.1",
-    "webpack-dev-server": "2.6.1",
-    "html-loader": "0.5.1"
-  },
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack"
@@ -24,5 +12,18 @@
     "angular-aria": "1.6.5",
     "angular-material": "1.1.4",
     "angular-ui-router": "1.0.3"
+  },
+  "devDependencies": {
+    "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "3.0.0",
+    "html-loader": "0.5.1",
+    "html-webpack-plugin": "2.30.1",
+    "node-sass": "4.5.3",
+    "postcss-loader": "2.0.6",
+    "sass-loader": "4.0.2",
+    "style-loader": "0.18.2",
+    "webpack": "3.4.1",
+    "webpack-dev-server": "2.6.1",
+    "webpack-manifest-plugin": "^1.3.1"
   }
 }
