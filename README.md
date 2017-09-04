@@ -1,4 +1,4 @@
 
-1) git checkout development
-2) yarn install
+1) yarn install
+2) yarn start
 3) http://localhost:3000
