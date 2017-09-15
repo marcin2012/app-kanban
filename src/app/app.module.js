@@ -13,4 +13,4 @@ var ngModule = angular.module(moduleName, dependencies);
 
 require('./app.component')(ngModule);
 require('./components/header/header.component')(ngModule);
-require('./components/viewTwo/viewTwo.component')(ngModule);
+require('./components/mainView/mainView.component')(ngModule);
