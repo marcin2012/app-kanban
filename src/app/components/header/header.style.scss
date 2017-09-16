@@ -1,23 +1,39 @@
 @import './src/app/app.style.scss';
 
-md-toolbar:not(.md-menu-toolbar) {
-  background-color: white;
-  color: rgba(255, 255, 255, 0.87);
-  border-bottom: 1px solid lightgray;
-}
-
-.md-toolbar-tools {
-  padding: 0 20px;
-}
-
-md-toolbar {
+.header {
   min-height: 60px;
   box-shadow: 0 2px 2px 0 lightgray;
+
+  &:not(.md-menu-toolbar) {
+    background-color: white;
+    color: rgba(255, 255, 255, 0.87);
+    border-bottom: 1px solid lightgray;
+  }
+
+  &__button-title {
+    font-size: 35px;
+    color: rgba(48, 59, 77, .2);
+    font-family: monospace;
+    width: 207px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display: inherit;
+
+    i {
+      font-size: 30px;
+      line-height: 43px;
+      margin-right: 5px;
+      color: #303b4d;
+    }
+  }
 }
 
-button {
+.main-button {
   padding: 0 15px;
-  border: 1px solid rgba(48,59,77,.2);
+  border: 1px solid rgba(48, 59, 77, .2);
   color: #989da6;
   background: #fff;
   border-radius: 6px;
@@ -25,6 +41,18 @@ button {
   line-height: 40px;
   font-size: 15px;
   margin-right: 10px;
+
+  &:hover {
+    box-shadow: 0 2px 2px 0 lightgray;
+    background-color: white;
+    .icons {
+      color: #303b4d;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   span {
     margin-right: 3px;
@@ -36,42 +64,36 @@ button {
   }
 }
 
-button:hover {
-  box-shadow: 0 2px 2px 0 lightgray;
-  background-color: white;
-  .icons {
-   color: #303b4d;
+md-dialog {
+
+  &.md-default-theme {
+    border-radius: 10px;
+  }
+
+  .md-dialog-content {
+    color: #989da6;
+    line-height: 40px;
+    font-size: 20px;
   }
 }
 
-button:focus {
-  outline: none;
-}
+.md-button.md-default-theme.md-primary {
+  padding: 0 15px;
+  border: 1px solid rgba(48, 59, 77, .2);
+  color: #989da6;
+  background: #fff;
+  border-radius: 6px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  margin-right: 10px;
 
-.md-toolbar-tools > .md-button:first-child {
-  margin: 0 0;
-}
-
-button.md-button.md-ink-riple {
-  background-color: transparent;
-}
-
-.title {
-  font-size: 35px;
-  color: rgba(48,59,77,.2);
-  font-family: monospace;
-  width: 207px;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  display: inherit;
-
-  i {
-    font-size: 30px;
-    line-height: 43px;
-    margin-right: 5px;
-    color: #303b4d;
+  &:hover {
+    box-shadow: 0 2px 2px 0 lightgray;
+    background-color: white;
   }
+}
+
+md-input-container .md-default-theme:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: #989da6 !important;
 }

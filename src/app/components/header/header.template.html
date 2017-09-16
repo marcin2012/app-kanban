@@ -1,13 +1,13 @@
 <md-toolbar class="header">
   <div class="md-toolbar-tools">
-    <button ng-click="showPrompt($event)">
+    <button class="main-button" ng-click="showPrompt($event)">
       <span class="title-cards"><i class="material-icons icons">speaker_notes</i></span>
       Dashboards
     </button>
-    <button ng-if="status" layout="row">
+    <button class="main-button" ng-if="status" layout="row">
       <span><i class="material-icons icons">content_paste</i></span>
       {{status}}
     </button>
-    <div class="title"><span><i class="material-icons">dashboard</i></span>NewKanban</div>
+    <div class="header__button-title"><span><i class="material-icons">dashboard</i></span>NewKanban</div>
   </div>
 </md-toolbar>

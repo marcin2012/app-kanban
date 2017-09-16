@@ -1,26 +1,25 @@
-<div class="container">
-  <button ng-click="vm.addList()">+ Add list</button>
+<div class="mainView-container">
+  <button class="main-button" ng-click="vm.addList()">+ Add list</button>
   <div ng-repeat="list in vm.lists" class="list">
-    <button class="delete" ng-click="vm.deleteList($index)"><i class="material-icons">clear</i></button>
+    <button class="main-button delete" ng-click="vm.deleteList($index)"><i class="material-icons">clear</i></button>
     <input class="list-name" ng-model="list.name"/>
     <div class="list-content">
-      <div dnd-list="list">
-        <!-- The dnd-draggable directive makes an element draggable and will
-             transfer the object that was assigned to it. If an element was
-             dragged away, you have to remove it from the original list
-             yourself using the dnd-moved attribute -->
+      <div dnd-list="list.tickets">
         <div ng-repeat="ticket in list.tickets track by $index" class="ticket"
              dnd-draggable="ticket"
              dnd-moved="list.tickets.splice($index, 1)"
              dnd-effect-allowed="move"
              dnd-selected="models.selected = ticket"
+             draggable="true"
              ng-class="{'selected': models.selected === ticket}">
           {{ticket.label}}
-          <input placeholder="Add description..." class="ticket-title" ng-model="ticket.title"/>
-          <button class="delete" ng-click="vm.delete($index, list)"><i class="material-icons">clear</i></button>
+          <textarea placeholder="Add description..." class="ticket-title" ng-model="ticket.title" rows="20"
+                    cols="50"></textarea>
+          <button class="main-button delete" ng-click="vm.delete($index, list)"><i class="material-icons">clear</i>
+          </button>
         </div>
       </div>
     </div>
-    <button class="add-ticket" ng-click="vm.addTicket(list)"> Add Ticket </button>
+    <button class="add-ticket main-button" ng-click="vm.addTicket(list)"> Add Ticket</button>
   </div>
 </div>

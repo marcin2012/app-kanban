@@ -36,6 +36,17 @@ module.exports = {
       {
         test: /\.html$/, exclude: /node_modules/,
         use: ['html-loader']
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: './src/assets/[name].[ext]'
+          }
+        }, {
+          loader: 'image-webpack-loader'
+        }]
       }
     ]
   },
