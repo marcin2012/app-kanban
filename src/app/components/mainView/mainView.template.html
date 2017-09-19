@@ -1,5 +1,4 @@
 <div class="mainView-container">
-  <button class="main-button" ng-click="vm.addList()">+ Add list</button>
   <div ng-repeat="list in vm.lists" class="list">
     <button class="main-button delete" ng-click="vm.deleteList($index)"><i class="material-icons">clear</i></button>
     <input class="list-name" ng-model="list.name"/>
@@ -12,14 +11,42 @@
              dnd-selected="models.selected = ticket"
              draggable="true"
              ng-class="{'selected': models.selected === ticket}">
-          {{ticket.label}}
+          <div class="priority" ng-class="list.tickets[$index]"></div>
           <textarea placeholder="Add description..." class="ticket-title" ng-model="ticket.title" rows="20"
                     cols="50"></textarea>
-          <button class="main-button delete" ng-click="vm.delete($index, list)"><i class="material-icons">clear</i>
-          </button>
+          <md-menu>
+            <button class="main-button delete" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin class="material-icons">more_vert</md-icon>
+            </button>
+            <md-menu-content width="4">
+              <md-menu-item>
+                <md-button ng-click="vm.delete($index, list)">
+                  <div layout="row">
+                    <md-icon md-menu-align-target class="material-icons">close</md-icon>
+                    <p flex>Delete</p>
+                  </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <div layout="row">
+                    <md-icon md-menu-align-target class="material-icons">add</md-icon>
+                    <p flex>Add priority</p>
+                    <form name="myForm">
+                      <select ng-model="list.tickets[$index]">
+                        <option value=" ">none</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                      </select>
+                    </form>
+                  </div>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
         </div>
       </div>
     </div>
     <button class="add-ticket main-button" ng-click="vm.addTicket(list)"> Add Ticket</button>
   </div>
+  <button class="add-list main-button" ng-click="vm.addList()">+ Add list</button>
 </div>

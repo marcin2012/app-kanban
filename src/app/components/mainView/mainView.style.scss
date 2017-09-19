@@ -14,24 +14,28 @@
   background-image: url("https://wallpaperscraft.com/image/pen_coffee_notebook_writing_54197_1680x1050.jpg");
   background-size: cover;
 
+  .add-list {
+    position: relative;
+    top: 44px;
+    margin-left: 20px;
+  }
+
   .list {
     display: inline-block;
-    background-color: rgba(236, 236, 236, 1);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     width: 300px;
     padding: 10px;
     vertical-align: top;
     position: relative;
-    opacity: 0.9;
 
     .list-content {
-      padding-bottom: 20px;
 
       [dnd-list] .dndPlaceholder {
         background-color: rgba(0, 0, 0, .09);
         display: block;
         width: 278px;
-        height: 60px;
+        min-height: 30px;
         border-width: 1px;
         border-radius: 6px;
         padding: 5px 10px 30px;
@@ -45,10 +49,10 @@
     .list-name {
       width: 280px;
       text-align: center;
-      font-size: 25px;
+      font-size: 20px;
       padding: 10px;
       border: none;
-      color: #989da6;
+      color: black;
       background: transparent;
 
       &:focus {
@@ -59,6 +63,9 @@
     .add-ticket {
       color: #989da6;
       border: 1px solid rgba(48, 59, 77, 0.2);
+      position: relative;
+      top: 60px;
+      left: 88px;
     }
 
     .ticket {
@@ -70,10 +77,10 @@
       }
       .ticket-title {
         max-width: 278px;
-        height: 60px;
+        height: 30px;
         border-width: 1px;
         border-radius: 10px;
-        padding: 30px 10px 10px;
+        padding: 20px 10px 10px;
 
         &:focus {
           outline: none;
@@ -95,17 +102,47 @@
     top: 6px;
     margin-right: 0;
     padding: 0;
+    border: none;
+    background: transparent;
+
+    &:hover {
+      box-shadow: none;
+    }
 
     i {
       position: relative;
+      color: black;
       top: -8px;
       right: -1px;
       font-size: 15px;
+
+      &:hover {
+        color: grey;
+      }
     }
   }
 }
 
 div[dnd-list] {
-  min-height: 40px;
+  min-height: 30px;
   padding-left: 0;
+}
+
+.low {
+  background-color:green;
+}
+.medium {
+  background-color:yellow;
+}
+
+.high {
+  background-color:red;
+}
+
+.priority {
+  border-radius: 10px 10px 0 0;
+  width: 298px;
+  height: 10px;
+  left: 1px;
+  position: absolute;
 }

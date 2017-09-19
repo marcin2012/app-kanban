@@ -94,6 +94,20 @@ md-dialog {
   }
 }
 
-md-input-container .md-default-theme:not(.md-input-invalid).md-input-focused .md-input {
-  border-color: #989da6 !important;
+md-input-container {
+  margin: 2px 5px;
+  font-size: 14px;
+
+  &.md-input-focused label {
+    &:first-child {
+      display: none;
+    }
+  }
+
+  &:not(.md-input-invalid) {
+
+    &.md-input-focused .md-input {
+      border-bottom: #989da6 solid 1px !important;
+    }
+  }
 }
