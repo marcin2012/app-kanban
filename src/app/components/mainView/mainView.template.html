@@ -4,19 +4,19 @@
     <input class="list-name" ng-model="list.name"/>
     <div class="list-content">
       <div dnd-list="list.tickets">
-        <div ng-repeat="ticket in list.tickets track by $index" class="ticket"
+        <div ng-repeat="ticket in list.tickets" class="ticket"
              dnd-draggable="ticket"
              dnd-moved="list.tickets.splice($index, 1)"
              dnd-effect-allowed="move"
              dnd-selected="models.selected = ticket"
              draggable="true"
              ng-class="{'selected': models.selected === ticket}">
-          <div class="priority" ng-class="list.tickets[$index]"></div>
+          <div class="priority" ng-class="ticket.value"></div>
           <textarea placeholder="Add description..." class="ticket-title" ng-model="ticket.title" rows="20"
                     cols="50"></textarea>
           <md-menu>
-            <button class="main-button delete" ng-click="$mdOpenMenu($event)">
-              <md-icon md-menu-origin class="material-icons">more_vert</md-icon>
+            <button class="main-button menu" ng-click="$mdOpenMenu($event)">
+              <i class="material-icons">more_vert</i>
             </button>
             <md-menu-content width="4">
               <md-menu-item>
@@ -28,25 +28,23 @@
                 </md-button>
               </md-menu-item>
               <md-menu-item>
-                  <div layout="row">
-                    <md-icon md-menu-align-target class="material-icons">add</md-icon>
-                    <p flex>Add priority</p>
-                    <form name="myForm">
-                      <select ng-model="list.tickets[$index]">
-                        <option value=" ">none</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                      </select>
-                    </form>
-                  </div>
+                <div layout="row">
+                <md-icon md-menu-align-target class="material-icons add">add</md-icon>
+                <p flex>Add priority</p>
+                  <md-select class="select" ng-model="ticket.value">
+                    <md-option value=" ">None</md-option>
+                    <md-option value="low">Low</md-option>
+                    <md-option value="medium">Medium</md-option>
+                    <md-option value="high">High</md-option>
+                  </md-select>
+              </div>
               </md-menu-item>
             </md-menu-content>
           </md-menu>
         </div>
       </div>
     </div>
-    <button class="add-ticket main-button" ng-click="vm.addTicket(list)"> Add Ticket</button>
+    <button class="add-ticket-button main-button" ng-click="vm.addTicket(list)">+ Add ticket</button>
   </div>
-  <button class="add-list main-button" ng-click="vm.addList()">+ Add list</button>
+  <button class="add-list-button main-button" ng-click="vm.addList()">+ Add list</button>
 </div>

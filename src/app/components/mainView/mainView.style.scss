@@ -14,10 +14,18 @@
   background-image: url("https://wallpaperscraft.com/image/pen_coffee_notebook_writing_54197_1680x1050.jpg");
   background-size: cover;
 
-  .add-list {
-    position: relative;
-    top: 44px;
+  .add-list-button {
+    margin-top: 40px;
     margin-left: 20px;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(48,59,77,.1), 0 1px 0 rgba(48,59,77,.1);
+    transition: all .3s cubic-bezier(.23,1,.32,1) 0s;
+
+    &:hover {
+      color: #fff;
+      background: #4A90E2;
+    }
   }
 
   .list {
@@ -48,11 +56,11 @@
 
     .list-name {
       width: 280px;
-      text-align: center;
-      font-size: 20px;
-      padding: 10px;
+      font-size: 16px;
+      padding: 10px 0;
       border: none;
-      color: black;
+      color: rgba(0,0,0,.7);
+      font-weight: bold;
       background: transparent;
 
       &:focus {
@@ -60,17 +68,29 @@
       }
     }
 
-    .add-ticket {
+    .add-ticket-button {
       color: #989da6;
       border: 1px solid rgba(48, 59, 77, 0.2);
       position: relative;
       top: 60px;
-      left: 88px;
+      left: 93px;
+      box-shadow: 0 1px 1px rgba(48,59,77,.1), 0 1px 0 rgba(48,59,77,.1);
+      transition: all .3s cubic-bezier(.23,1,.32,1) 0s;
+
+      &:hover {
+        color: #fff;
+        background: #4A90E2;
+      }
     }
 
     .ticket {
       position: relative;
       border-radius: 10px;
+
+      &:hover {
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.7);
+        transition: all .3s cubic-bezier(.23,1,.32,1) 0s;
+      }
 
       &:not(:first-child) {
         margin-top: 10px;
@@ -80,7 +100,9 @@
         height: 30px;
         border-width: 1px;
         border-radius: 10px;
-        padding: 20px 10px 10px;
+        color: rgba(0,0,0,.7);
+        font-size: 16px;
+        padding: 20px 0 10px 19px;
 
         &:focus {
           outline: none;
@@ -121,11 +143,59 @@
       }
     }
   }
+
+  .menu {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    margin-right: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    transform: rotate(90deg);
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    i {
+      position: relative;
+      color: black;
+      top: -5px;
+      font-size: 20px;
+
+      &:hover {
+        color: grey;
+      }
+    }
+  }
 }
 
 div[dnd-list] {
-  min-height: 30px;
+  min-height: 40px;
   padding-left: 0;
+}
+
+.add{
+  margin-right: 17px;
+}
+
+.select {
+  border-radius: 10px;
+  height: 30px;
+  margin: 0;
+  font-size: 15px;
+  margin-top: 8px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.md-select-menu-container {
+  z-index: 100;
 }
 
 .low {
@@ -140,9 +210,10 @@ div[dnd-list] {
 }
 
 .priority {
-  border-radius: 10px 10px 0 0;
-  width: 298px;
-  height: 10px;
+  border-radius: 9px 9px 0 0;
+  width: 297px;
+  height: 9px;
+  top: 1px;
   left: 1px;
   position: absolute;
 }

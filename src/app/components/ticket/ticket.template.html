@@ -1,0 +1,30 @@
+<div class="priority" ng-class="ticket.value"></div>
+<textarea placeholder="Add description..." class="ticket-title" ng-model="ticket.title" rows="20"
+          cols="50"></textarea>
+<md-menu>
+  <button class="main-button menu" ng-click="$mdOpenMenu($event)">
+    <i class="material-icons">more_vert</i>
+  </button>
+  <md-menu-content width="4">
+    <md-menu-item>
+      <md-button ng-click="vm.delete($index, list)">
+        <div layout="row">
+          <md-icon md-menu-align-target class="material-icons">close</md-icon>
+          <p flex>Delete</p>
+        </div>
+      </md-button>
+    </md-menu-item>
+    <md-menu-item>
+      <div layout="row">
+        <md-icon md-menu-align-target class="material-icons add">add</md-icon>
+        <p flex>Add priority</p>
+        <select class="select" ng-model="ticket.value">
+          <option value=" ">None</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>

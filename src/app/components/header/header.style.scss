@@ -4,6 +4,10 @@
   min-height: 60px;
   box-shadow: 0 2px 2px 0 lightgray;
 
+  .md-toolbar-tools {
+    padding: 0 20px;
+  }
+
   &:not(.md-menu-toolbar) {
     background-color: white;
     color: rgba(255, 255, 255, 0.87);
@@ -41,9 +45,10 @@
   line-height: 40px;
   font-size: 15px;
   margin-right: 10px;
+  transition: all .3s cubic-bezier(.23, 1, .32, 1) 0s;
 
   &:hover {
-    box-shadow: 0 2px 2px 0 lightgray;
+    box-shadow: 0 4px 4px 0 lightgray;
     background-color: white;
     .icons {
       color: #303b4d;
@@ -65,7 +70,6 @@
 }
 
 md-dialog {
-
   &.md-default-theme {
     border-radius: 10px;
   }
@@ -74,6 +78,7 @@ md-dialog {
     color: #989da6;
     line-height: 40px;
     font-size: 20px;
+    padding: 20px;
   }
 }
 
@@ -85,11 +90,13 @@ md-dialog {
   border-radius: 6px;
   height: 40px;
   line-height: 40px;
+  margin-bottom: 10px;
   font-size: 15px;
   margin-right: 10px;
+  transition: all .3s cubic-bezier(.23, 1, .32, 1) 0s;
 
   &:hover {
-    box-shadow: 0 2px 2px 0 lightgray;
+    box-shadow: 0 3px 3px 0 lightgray;
     background-color: white;
   }
 }
