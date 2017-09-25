@@ -10,9 +10,6 @@
   left: 0;
   right: 0;
   padding: 20px;
-  background: center no-repeat;
-  background-image: url("https://wallpaperscraft.com/image/pen_coffee_notebook_writing_54197_1680x1050.jpg");
-  background-size: cover;
 
   .add-list-button {
     margin-top: 40px;
@@ -57,11 +54,15 @@
     .list-name {
       width: 280px;
       font-size: 16px;
-      padding: 10px 0;
+      padding: 0 0 10px;
       border: none;
       color: rgba(0,0,0,.7);
       font-weight: bold;
       background: transparent;
+
+      &:hover {
+        color: rgba(48,59,77,.5);
+      }
 
       &:focus {
         outline: none;
@@ -84,7 +85,6 @@
     }
 
     .ticket {
-      position: relative;
       border-radius: 10px;
 
       &:hover {
@@ -173,6 +173,11 @@
   }
 }
 
+.ticket-container {
+  position: relative;
+  border-radius: 10px;
+}
+
 div[dnd-list] {
   min-height: 40px;
   padding-left: 0;
@@ -199,19 +204,19 @@ div[dnd-list] {
 }
 
 .low {
-  background-color:green;
+  background-color:#009688;
 }
 .medium {
-  background-color:yellow;
+  background-color:#FFEB3B;
 }
 
 .high {
-  background-color:red;
+  background-color:#F44336;
 }
 
 .priority {
-  border-radius: 9px 9px 0 0;
-  width: 297px;
+  border-radius: 9px 0 0 0;
+  width: 100px;
   height: 9px;
   top: 1px;
   left: 1px;

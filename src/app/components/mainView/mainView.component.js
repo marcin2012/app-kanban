@@ -4,9 +4,6 @@ module.exports = function (ngModule) {
   ngModule.component('mainView', {
     template: require('./mainView.template.html'),
     controllerAs: "vm",
-    bindings: {
-      status: '<'
-    },
     controller: mainViewController
   });
 };
